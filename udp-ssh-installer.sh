@@ -74,10 +74,10 @@ systemctl restart sshd
 # Install UDP Custom
 echo -e "${GREEN}[3/10] Install UDP Custom...${NC}"
 cd /root
-git clone https://github.com/ambrop72/udptunnel
-cd udptunnel
+git clone https://github.com/maleeqbdg-droid/UDP-Custom.git
+cd UDP-Custom
 make
-cp udptunnel /usr/local/bin/udp-custom
+cp UDP-Custom /usr/local/bin/udp-custom
 chmod +x /usr/local/bin/udp-custom
 
 # Buat direktori kerja
