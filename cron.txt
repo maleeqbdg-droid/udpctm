@@ -1,0 +1,17 @@
+# Setup cron jobs untuk automation
+cat > /etc/cron.d/udp-custom << EOF
+# Monitor setiap 2 menit
+*/2 * * * * root /usr/local/bin/udp-monitor
+
+# Backup harian jam 3 pagi
+0 3 * * * root /usr/local/bin/auto-backup
+
+# Cleanup expired users setiap jam
+0 * * * * root /usr/local/bin/cleanup-expired
+
+# Update system mingguan
+0 4 * * 0 root apt update && apt upgrade -y
+
+# Restart services harian untuk fresh
+0 5 * * * root systemctl restart udp-custom && systemctl restart sshd
+EOF
