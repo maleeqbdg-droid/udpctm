@@ -76,8 +76,9 @@ echo -e "${GREEN}[3/10] Install UDP Custom...${NC}"
 cd /root
 git clone https://github.com/maleeqbdg-droid/UDP-Custom.git
 cd UDP-Custom
-make
-cp UDP-Custom /usr/local/bin/udp-custom
+
+# Pindahkan file binary
+cp udp-custom /usr/local/bin/udp-custom
 chmod +x /usr/local/bin/udp-custom
 
 # Buat direktori kerja
