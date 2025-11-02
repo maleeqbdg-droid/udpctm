@@ -74,14 +74,15 @@ systemctl restart sshd
 # Install UDP Custom
 echo -e "${GREEN}[3/10] Install UDP Custom...${NC}"
 cd /root
+rm -rf UDP-Custom
 git clone https://github.com/maleeqbdg-droid/UDP-Custom.git
 cd UDP-Custom
 
-# Pindahkan file binary
+# Copy binary ke sistem
 cp udp-custom /usr/local/bin/udp-custom
 chmod +x /usr/local/bin/udp-custom
 
-# Buat direktori kerja
+# Buat folder kerja
 mkdir -p /etc/udp-custom
 mkdir -p /var/log/udp-custom
 mkdir -p /root/backup/{system,users}
